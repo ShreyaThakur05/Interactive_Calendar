@@ -1,60 +1,67 @@
 /* ═══════════════════════════════════════════════════════════════
-   WIDGET STYLES — isolated from WallCalendar.module.css
+   WIDGET STYLES
 ═══════════════════════════════════════════════════════════════ */
 
-/* ── Fact badge — lightbulb SVG icon, top-left corner ── */
+/* ── Fact badge (lightbulb icon on day cell) ── */
 .factBadge {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: rgba(245,158,11,0.15);
-  color: #f59e0b;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #f59e0b;
   cursor: pointer;
   z-index: 4;
-  border: 1px solid rgba(245,158,11,0.35);
-  transition: transform 0.15s, background 0.15s;
+  opacity: 0.75;
+  transition: opacity 0.15s, transform 0.15s;
 }
-.factBadge:hover {
-  transform: scale(1.25);
-  background: rgba(245,158,11,0.28);
-}
+.factBadge:hover { opacity: 1; transform: scale(1.3); }
 
-/* Fact card — portal, fixed, centered above anchor */
+/* ── Fact popup card (portal, fixed) ── */
 .factCard {
   position: fixed;
+  transform: translateX(-50%) translateY(calc(-100% - 12px));
   width: 230px;
-  background: #0f172a;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(8, 12, 24, 0.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.12), 0 20px 48px rgba(0,0,0,0.55);
-  z-index: 9999;
+  z-index: 99999;
   pointer-events: none;
-  transform: translateX(-50%) translateY(calc(-100% - 10px));
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.25),
+    0 20px 60px rgba(0,0,0,0.6),
+    0 4px 16px rgba(0,0,0,0.4);
+  animation: popIn 0.18s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(calc(-100% - 6px)) scale(0.92); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(calc(-100% - 12px)) scale(1); }
 }
 
 .factCardHead {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 9px 12px 7px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  gap: 8px;
+  padding: 10px 13px 8px;
+  border-bottom: 1px solid rgba(245,158,11,0.2);
+  background: rgba(245,158,11,0.08);
 }
 
 .factCardIconWrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 22px;
   height: 22px;
   border-radius: 50%;
   background: rgba(245,158,11,0.15);
+  border: 1px solid rgba(245,158,11,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
@@ -63,55 +70,52 @@
   font-weight: 800;
   color: #f59e0b;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
 }
 
 .factCardBody {
   margin: 0;
-  padding: 8px 12px 11px;
-  font-size: 12px;
+  padding: 10px 13px 12px;
+  font-size: 11.5px;
   color: rgba(255,255,255,0.82);
   line-height: 1.6;
 }
 
-/* ── Event badge — SVG icon pill, top-right corner ── */
+/* ── Event badge ── */
 .eventBadgeWrap {
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 1px;
+  right: 1px;
   z-index: 5;
 }
 
-.eventPill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
+.eventEmoji {
+  font-size: 10px;
+  line-height: 1;
   cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.5);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-  transition: transform 0.15s, box-shadow 0.15s;
-  user-select: none;
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  transition: transform 0.15s ease;
 }
-.eventPill:hover {
-  transform: scale(1.3);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.28);
-}
+.eventEmoji:hover { transform: scale(1.5); }
 
-/* Event card — portal, fixed */
+/* ── Event popup card (portal, fixed) ── */
 .eventCard {
   position: fixed;
+  transform: translateX(-50%) translateY(calc(-100% - 12px));
   width: 230px;
-  background: #0f172a;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(8, 12, 24, 0.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.12), 0 20px 48px rgba(0,0,0,0.55);
-  z-index: 9999;
+  z-index: 99999;
   pointer-events: none;
-  transform: translateX(-50%) translateY(calc(-100% - 10px));
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 20px 60px rgba(0,0,0,0.6),
+    0 4px 16px rgba(0,0,0,0.4);
+  animation: popIn 0.18s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .eventCardHeader {
@@ -123,18 +127,7 @@
   font-size: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.eventCardIconWrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.18);
-  flex-shrink: 0;
-}
-
-.eventCardHeader strong { flex: 1; font-weight: 700; font-size: 13px; }
+.eventCardHeader strong { flex: 1; font-weight: 700; }
 
 .eventType {
   font-size: 9px;
@@ -150,48 +143,47 @@
 .eventDesc {
   margin: 0;
   padding: 9px 12px 11px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.6;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.55;
 }
 
-/* ── Zodiac strip — thin colored bar at very bottom of cell ── */
+/* ── Zodiac strip ── */
 .zodiacWrap {
   position: absolute;
-  bottom: 1px;       /* sits at the very bottom edge, below the dots */
-  left: 18%;
-  right: 18%;
-  height: 2.5px;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
   z-index: 3;
-  border-radius: 2px;
-  overflow: visible;
 }
 
 .zodiacStrip {
   width: 100%;
   height: 100%;
   border-radius: 2px;
-  opacity: 0.6;
+  opacity: 0.65;
   cursor: pointer;
-  transition: opacity 0.15s, transform 0.15s;
+  transition: opacity 0.15s, height 0.15s;
 }
-.zodiacStrip:hover {
-  opacity: 1;
-  transform: scaleY(1.5);
-}
+.zodiacStrip:hover { opacity: 1; height: 4px; }
 
-/* Zodiac card — portal, fixed */
+/* ── Zodiac popup card (portal, fixed) ── */
 .zodiacCard {
   position: fixed;
+  transform: translateX(-50%) translateY(calc(-100% - 12px));
   width: 210px;
-  background: #0f172a;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(8, 12, 24, 0.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: 14px;
   padding: 12px 14px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.12), 0 20px 48px rgba(0,0,0,0.55);
-  z-index: 9999;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 20px 60px rgba(0,0,0,0.6);
+  z-index: 99999;
   pointer-events: none;
-  transform: translateX(-50%) translateY(calc(-100% - 10px));
+  animation: popIn 0.18s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .zodiacCardHead {
@@ -200,18 +192,19 @@
   gap: 9px;
   margin-bottom: 7px;
 }
-.zodiacEmoji   { font-size: 26px; }
-.zodiacSign    { font-size: 13px; font-weight: 800; color: #f1f5f9; }
+.zodiacEmoji { font-size: 26px; }
+.zodiacSign { font-size: 13px; font-weight: 800; color: #f1f5f9; }
 .zodiacElement { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 1px; }
-.zodiacTrait   { margin: 0; font-size: 11.5px; color: rgba(255,255,255,0.65); line-height: 1.6; font-style: italic; }
+.zodiacTrait { margin: 0; font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.55; font-style: italic; }
 
-/* ── Year progress bar ── */
+/* ── Year progress ── */
 .yearProgress {
   display: flex;
   align-items: center;
   gap: 7px;
   flex-shrink: 0;
   cursor: default;
+  position: relative;
 }
 
 .yearProgressBar {
@@ -405,60 +398,4 @@
   padding: 4px 10px;
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.12);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   THEME VARIABLES
-═══════════════════════════════════════════════════════════════ */
-[data-theme='dark'] {
-  --text-primary:   #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted:     #64748b;
-  --border:         #1e293b;
-  --surface:        #0f172a;
-  --card-bg:        #1e293b;
-  --panel-bg:       #1e293b;
-  background-color: #020617;
-}
-[data-theme='dark'] body {
-  background-color: #020617;
-  background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
-}
-[data-theme='nature'] {
-  --text-primary:   #14532d;
-  --text-secondary: #166534;
-  --text-muted:     #4ade80;
-  --border:         #bbf7d0;
-  --surface:        #f0fdf4;
-  --card-bg:        #ffffff;
-  --panel-bg:       #f0fdf4;
-  background-color: #dcfce7;
-}
-[data-theme='cosmic'] {
-  --text-primary:   #e2e8f0;
-  --text-secondary: #a5b4fc;
-  --text-muted:     #6366f1;
-  --border:         #1e1b4b;
-  --surface:        #0f0a2e;
-  --card-bg:        #0f0a2e;
-  --panel-bg:       #0f0a2e;
-  background-color: #030014;
-}
-[data-theme='cosmic'] body {
-  background-color: #030014;
-  background-image: radial-gradient(circle, #1e1b4b 1px, transparent 1px);
-}
-[data-theme='minimal'] {
-  --text-primary:   #111;
-  --text-secondary: #555;
-  --text-muted:     #999;
-  --border:         #e5e5e5;
-  --surface:        #fafafa;
-  --card-bg:        #ffffff;
-  --panel-bg:       #ffffff;
-  background-color: #fff;
-}
-[data-theme='minimal'] body {
-  background-color: #fff;
-  background-image: none;
 }
