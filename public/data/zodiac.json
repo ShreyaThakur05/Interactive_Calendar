@@ -1,0 +1,14 @@
+[
+  { "sign": "Capricorn",  "emoji": "♑", "start": "12-22", "end": "01-19", "element": "Earth", "color": "#475569", "trait": "Disciplined, responsible, and ambitious. A natural leader with deep patience." },
+  { "sign": "Aquarius",   "emoji": "♒", "start": "01-20", "end": "02-18", "element": "Air",   "color": "#2563eb", "trait": "Innovative, independent, and humanitarian. Sees the world as it could be." },
+  { "sign": "Pisces",     "emoji": "♓", "start": "02-19", "end": "03-20", "element": "Water", "color": "#7c3aed", "trait": "Intuitive, empathetic, and artistic. Deeply connected to the unseen world." },
+  { "sign": "Aries",      "emoji": "♈", "start": "03-21", "end": "04-19", "element": "Fire",  "color": "#dc2626", "trait": "Bold, energetic, and pioneering. First to leap into the unknown." },
+  { "sign": "Taurus",     "emoji": "♉", "start": "04-20", "end": "05-20", "element": "Earth", "color": "#16a34a", "trait": "Reliable, patient, and sensual. Finds beauty in the material world." },
+  { "sign": "Gemini",     "emoji": "♊", "start": "05-21", "end": "06-20", "element": "Air",   "color": "#d97706", "trait": "Curious, adaptable, and expressive. Two minds in one brilliant soul." },
+  { "sign": "Cancer",     "emoji": "♋", "start": "06-21", "end": "07-22", "element": "Water", "color": "#0891b2", "trait": "Nurturing, intuitive, and protective. Home is where the heart lives." },
+  { "sign": "Leo",        "emoji": "♌", "start": "07-23", "end": "08-22", "element": "Fire",  "color": "#ea580c", "trait": "Charismatic, generous, and creative. Born to shine and inspire." },
+  { "sign": "Virgo",      "emoji": "♍", "start": "08-23", "end": "09-22", "element": "Earth", "color": "#16a34a", "trait": "Analytical, precise, and devoted. Excellence is the only standard." },
+  { "sign": "Libra",      "emoji": "♎", "start": "09-23", "end": "10-22", "element": "Air",   "color": "#db2777", "trait": "Balanced, charming, and just. Seeks harmony in all things." },
+  { "sign": "Scorpio",    "emoji": "♏", "start": "10-23", "end": "11-21", "element": "Water", "color": "#7c3aed", "trait": "Intense, perceptive, and transformative. Depth is their natural state." },
+  { "sign": "Sagittarius","emoji": "♐", "start": "11-22", "end": "12-21", "element": "Fire",  "color": "#b45309", "trait": "Adventurous, philosophical, and free. The eternal seeker of truth." }
+]

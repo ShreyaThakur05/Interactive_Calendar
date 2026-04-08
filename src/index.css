@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: #eef2f7;
+  background-image: radial-gradient(circle, #c8d3e0 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+#root { width: 100%; }
+
+/* ── Theme variables — global, intentionally not scoped ── */
+
+[data-theme='dark'] {
+  --text-primary:   #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted:     #64748b;
+  --border:         #334155;
+  --surface:        #1e293b;
+  --card-bg:        #1e293b;
+  --panel-bg:       #1e293b;
+}
+[data-theme='dark'] body {
+  background-color: #0f172a;
+  background-image: radial-gradient(circle, #334155 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+[data-theme='nature'] {
+  --text-primary:   #14532d;
+  --text-secondary: #166534;
+  --text-muted:     #16a34a;
+  --border:         #bbf7d0;
+  --surface:        #f0fdf4;
+  --card-bg:        #f0fdf4;
+  --panel-bg:       #f0fdf4;
+}
+[data-theme='nature'] body {
+  background-color: #dcfce7;
+  background-image: radial-gradient(circle, #86efac 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+[data-theme='cosmic'] {
+  --text-primary:   #e2e8f0;
+  --text-secondary: #a5b4fc;
+  --text-muted:     #818cf8;
+  --border:         #312e81;
+  --surface:        #1e1b4b;
+  --card-bg:        #1e1b4b;
+  --panel-bg:       #1e1b4b;
+}
+[data-theme='cosmic'] body {
+  background-color: #0f0a2e;
+  background-image: radial-gradient(circle, #312e81 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+[data-theme='minimal'] {
+  --text-primary:   #111;
+  --text-secondary: #555;
+  --text-muted:     #999;
+  --border:         #e5e5e5;
+  --surface:        #fafafa;
+  --card-bg:        #ffffff;
+  --panel-bg:       #ffffff;
+}
+[data-theme='minimal'] body {
+  background-color: #fff;
+  background-image: none;
+}

@@ -1,0 +1,14 @@
+[
+  { "month": 0, "name": "January",   "theme": "Snow Leopard",    "emoji": "🐆", "tagline": "Silent peaks, hidden power",        "palette": ["#1e3a5f","#2563EB","#93c5fd"] },
+  { "month": 1, "name": "February",  "theme": "Arctic Fox",      "emoji": "🦊", "tagline": "Soft fur against the frozen world",  "palette": ["#2d1b69","#7C3AED","#c4b5fd"] },
+  { "month": 2, "name": "March",     "theme": "Cherry Blossom",  "emoji": "🌸", "tagline": "Fleeting beauty, eternal memory",    "palette": ["#831843","#DB2777","#fbcfe8"] },
+  { "month": 3, "name": "April",     "theme": "Spring Robin",    "emoji": "🐦", "tagline": "First song after the long silence",  "palette": ["#14532d","#16A34A","#86efac"] },
+  { "month": 4, "name": "May",       "theme": "Monarch Butterfly","emoji": "🦋","tagline": "A thousand miles on painted wings",  "palette": ["#7c2d12","#EA580C","#fdba74"] },
+  { "month": 5, "name": "June",      "theme": "Sea Turtle",      "emoji": "🐢", "tagline": "Ancient navigator of warm currents", "palette": ["#164e63","#0891B2","#67e8f9"] },
+  { "month": 6, "name": "July",      "theme": "Golden Eagle",    "emoji": "🦅", "tagline": "Sovereign of the summer sky",        "palette": ["#78350f","#D97706","#fcd34d"] },
+  { "month": 7, "name": "August",    "theme": "Red Fox",         "emoji": "🦊", "tagline": "Cunning spirit of the harvest fields","palette": ["#7f1d1d","#DC2626","#fca5a5"] },
+  { "month": 8, "name": "September", "theme": "Harvest Owl",     "emoji": "🦉", "tagline": "Wisdom watches the turning leaves",  "palette": ["#451a03","#B45309","#fcd34d"] },
+  { "month": 9, "name": "October",   "theme": "Red Deer",        "emoji": "🦌", "tagline": "Antlers crowned in autumn fire",     "palette": ["#431407","#C2410C","#fed7aa"] },
+  { "month": 10,"name": "November",  "theme": "Grey Wolf",       "emoji": "🐺", "tagline": "Pack howls echo through bare trees", "palette": ["#0f172a","#475569","#cbd5e1"] },
+  { "month": 11,"name": "December",  "theme": "Snowy Owl",       "emoji": "🦉", "tagline": "White wings over the winter solstice","palette": ["#1e1b4b","#1D4ED8","#bfdbfe"] }
+]

@@ -1,0 +1,22 @@
+[
+  { "key": "01-01", "name": "New Year's Day",        "emoji": "🎆", "type": "global",   "color": "#f59e0b", "desc": "The world rings in the new year with fireworks and celebrations." },
+  { "key": "01-14", "name": "Makar Sankranti",       "emoji": "🪁", "type": "cultural", "color": "#f97316", "desc": "Hindu harvest festival marking the sun's transit into Capricorn." },
+  { "key": "01-26", "name": "Republic Day",          "emoji": "🇮🇳","type": "national", "color": "#2563eb", "desc": "India celebrates the adoption of its constitution in 1950." },
+  { "key": "03-08", "name": "Women's Day",           "emoji": "💜", "type": "global",   "color": "#a855f7", "desc": "International Women's Day — celebrating achievements of women worldwide." },
+  { "key": "03-20", "name": "Spring Equinox",        "emoji": "🌱", "type": "celestial","color": "#16a34a", "desc": "Day and night are equal. Spring officially begins in the Northern Hemisphere." },
+  { "key": "03-25", "name": "Holi",                  "emoji": "🎨", "type": "cultural", "color": "#ec4899", "desc": "Festival of colours celebrating the triumph of good over evil." },
+  { "key": "04-14", "name": "Dr. Ambedkar Jayanti", "emoji": "📚", "type": "national", "color": "#2563eb", "desc": "Birth anniversary of B.R. Ambedkar, architect of the Indian Constitution." },
+  { "key": "04-22", "name": "Earth Day",             "emoji": "🌍", "type": "global",   "color": "#16a34a", "desc": "Annual event to demonstrate support for environmental protection." },
+  { "key": "05-01", "name": "Labour Day",            "emoji": "⚒️", "type": "global",   "color": "#dc2626", "desc": "International Workers' Day — honouring the labour movement worldwide." },
+  { "key": "06-21", "name": "Summer Solstice",       "emoji": "☀️", "type": "celestial","color": "#d97706", "desc": "The longest day of the year. The sun reaches its highest point in the sky." },
+  { "key": "08-15", "name": "Independence Day",      "emoji": "🇮🇳","type": "national", "color": "#16a34a", "desc": "India's independence from British rule, declared on August 15, 1947." },
+  { "key": "09-22", "name": "Autumn Equinox",        "emoji": "🍂", "type": "celestial","color": "#b45309", "desc": "Day and night are equal. Autumn officially begins in the Northern Hemisphere." },
+  { "key": "10-02", "name": "Gandhi Jayanti",        "emoji": "🕊️", "type": "national", "color": "#16a34a", "desc": "Birth anniversary of Mahatma Gandhi, father of the Indian nation." },
+  { "key": "10-12", "name": "Dussehra",              "emoji": "🏹", "type": "cultural", "color": "#ea580c", "desc": "Celebrates the victory of Lord Rama over Ravana — good over evil." },
+  { "key": "10-31", "name": "Halloween",             "emoji": "🎃", "type": "cultural", "color": "#f97316", "desc": "Ancient Celtic festival of Samhain, now celebrated with costumes and candy." },
+  { "key": "11-01", "name": "Diwali",                "emoji": "🪔", "type": "cultural", "color": "#f59e0b", "desc": "Festival of Lights — one of the most celebrated festivals in the world." },
+  { "key": "11-15", "name": "Guru Nanak Jayanti",   "emoji": "🙏", "type": "cultural", "color": "#f97316", "desc": "Birth anniversary of Guru Nanak Dev Ji, founder of Sikhism." },
+  { "key": "12-21", "name": "Winter Solstice",       "emoji": "❄️", "type": "celestial","color": "#1d4ed8", "desc": "The shortest day of the year. The sun is at its lowest point in the sky." },
+  { "key": "12-25", "name": "Christmas",             "emoji": "🎄", "type": "cultural", "color": "#16a34a", "desc": "Celebrates the birth of Jesus Christ. Observed by over 2 billion people." },
+  { "key": "12-31", "name": "New Year's Eve",        "emoji": "🥂", "type": "global",   "color": "#7c3aed", "desc": "The last night of the year — celebrated with countdowns and fireworks." }
+]

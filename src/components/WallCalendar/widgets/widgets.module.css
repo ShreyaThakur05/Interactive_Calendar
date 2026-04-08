@@ -1,0 +1,464 @@
+/* ═══════════════════════════════════════════════════════════════
+   WIDGET STYLES — isolated from WallCalendar.module.css
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Fact badge — lightbulb SVG icon, top-left corner ── */
+.factBadge {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(245,158,11,0.15);
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+  border: 1px solid rgba(245,158,11,0.35);
+  transition: transform 0.15s, background 0.15s;
+}
+.factBadge:hover {
+  transform: scale(1.25);
+  background: rgba(245,158,11,0.28);
+}
+
+/* Fact card — portal, fixed, centered above anchor */
+.factCard {
+  position: fixed;
+  width: 230px;
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12), 0 20px 48px rgba(0,0,0,0.55);
+  z-index: 9999;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(calc(-100% - 10px));
+}
+
+.factCardHead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px 7px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.factCardIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(245,158,11,0.15);
+  flex-shrink: 0;
+}
+
+.factCardTitle {
+  font-size: 10px;
+  font-weight: 800;
+  color: #f59e0b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.factCardBody {
+  margin: 0;
+  padding: 8px 12px 11px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.6;
+}
+
+/* ── Event badge — SVG icon pill, top-right corner ── */
+.eventBadgeWrap {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 5;
+}
+
+.eventPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  transition: transform 0.15s, box-shadow 0.15s;
+  user-select: none;
+}
+.eventPill:hover {
+  transform: scale(1.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.28);
+}
+
+/* Event card — portal, fixed */
+.eventCard {
+  position: fixed;
+  width: 230px;
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12), 0 20px 48px rgba(0,0,0,0.55);
+  z-index: 9999;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(calc(-100% - 10px));
+}
+
+.eventCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.eventCardIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  flex-shrink: 0;
+}
+
+.eventCardHeader strong { flex: 1; font-weight: 700; font-size: 13px; }
+
+.eventType {
+  font-size: 9px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 5px;
+  padding: 2px 6px;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.eventDesc {
+  margin: 0;
+  padding: 9px 12px 11px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+/* ── Zodiac strip — thin colored bar at very bottom of cell ── */
+.zodiacWrap {
+  position: absolute;
+  bottom: 1px;       /* sits at the very bottom edge, below the dots */
+  left: 18%;
+  right: 18%;
+  height: 2.5px;
+  z-index: 3;
+  border-radius: 2px;
+  overflow: visible;
+}
+
+.zodiacStrip {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.zodiacStrip:hover {
+  opacity: 1;
+  transform: scaleY(1.5);
+}
+
+/* Zodiac card — portal, fixed */
+.zodiacCard {
+  position: fixed;
+  width: 210px;
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12), 0 20px 48px rgba(0,0,0,0.55);
+  z-index: 9999;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(calc(-100% - 10px));
+}
+
+.zodiacCardHead {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+}
+.zodiacEmoji   { font-size: 26px; }
+.zodiacSign    { font-size: 13px; font-weight: 800; color: #f1f5f9; }
+.zodiacElement { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 1px; }
+.zodiacTrait   { margin: 0; font-size: 11.5px; color: rgba(255,255,255,0.65); line-height: 1.6; font-style: italic; }
+
+/* ── Year progress bar ── */
+.yearProgress {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.yearProgressBar {
+  width: 68px;
+  height: 5px;
+  background: var(--border, #e2e8f0);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.yearProgressFill {
+  height: 100%;
+  background: var(--accent, #2563eb);
+  border-radius: 6px;
+  transition: width 0.8s ease;
+}
+
+.yearProgressLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #94a3b8);
+  white-space: nowrap;
+}
+
+/* ── Theme switcher ── */
+.themeSwitcher { position: relative; flex-shrink: 0; }
+
+.themeToggleBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border, #e2e8f0);
+  background: var(--surface, #f8fafc);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.themeToggleBtn:hover { transform: scale(1.12); box-shadow: 0 3px 10px rgba(0,0,0,0.14); }
+
+.themeMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+  overflow: hidden;
+  z-index: 300;
+  min-width: 140px;
+}
+
+.themeOption {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 13px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  text-align: left;
+}
+.themeOption:hover { background: #f8fafc; }
+.themeOptionActive { background: var(--accent-light, #dbeafe); color: var(--accent, #2563eb); font-weight: 700; }
+
+/* ── Earth orbit ── */
+.orbitWidget { position: relative; flex-shrink: 0; }
+
+.orbitToggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border, #e2e8f0);
+  background: var(--surface, #f8fafc);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.orbitToggle:hover { transform: scale(1.12); }
+
+.orbitPanel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  z-index: 300;
+  text-align: center;
+  min-width: 160px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.orbitTitle {
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.orbitNote {
+  font-size: 10px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 8px;
+}
+
+/* ── Hero strip ── */
+.heroStrip {
+  width: 100%;
+  max-width: 1060px;
+  border-radius: 16px;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.heroStripShimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.08) 50%, transparent 65%);
+  background-size: 250% 100%;
+  animation: shimmer 3.5s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 250% 0; }
+  100% { background-position: -250% 0; }
+}
+
+.heroStripEmoji {
+  font-size: 36px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.35));
+  position: relative;
+  z-index: 1;
+}
+
+.heroStripText {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.heroStripTheme {
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.heroStripTagline {
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  margin-top: 3px;
+  font-style: italic;
+}
+
+.heroStripYear {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   THEME VARIABLES
+═══════════════════════════════════════════════════════════════ */
+[data-theme='dark'] {
+  --text-primary:   #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted:     #64748b;
+  --border:         #1e293b;
+  --surface:        #0f172a;
+  --card-bg:        #1e293b;
+  --panel-bg:       #1e293b;
+  background-color: #020617;
+}
+[data-theme='dark'] body {
+  background-color: #020617;
+  background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+}
+[data-theme='nature'] {
+  --text-primary:   #14532d;
+  --text-secondary: #166534;
+  --text-muted:     #4ade80;
+  --border:         #bbf7d0;
+  --surface:        #f0fdf4;
+  --card-bg:        #ffffff;
+  --panel-bg:       #f0fdf4;
+  background-color: #dcfce7;
+}
+[data-theme='cosmic'] {
+  --text-primary:   #e2e8f0;
+  --text-secondary: #a5b4fc;
+  --text-muted:     #6366f1;
+  --border:         #1e1b4b;
+  --surface:        #0f0a2e;
+  --card-bg:        #0f0a2e;
+  --panel-bg:       #0f0a2e;
+  background-color: #030014;
+}
+[data-theme='cosmic'] body {
+  background-color: #030014;
+  background-image: radial-gradient(circle, #1e1b4b 1px, transparent 1px);
+}
+[data-theme='minimal'] {
+  --text-primary:   #111;
+  --text-secondary: #555;
+  --text-muted:     #999;
+  --border:         #e5e5e5;
+  --surface:        #fafafa;
+  --card-bg:        #ffffff;
+  --panel-bg:       #ffffff;
+  background-color: #fff;
+}
+[data-theme='minimal'] body {
+  background-color: #fff;
+  background-image: none;
+}
