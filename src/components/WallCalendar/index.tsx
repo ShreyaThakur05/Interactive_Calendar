@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback, useRef, PointerEvent } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import type { PointerEvent } from 'react';
 import HeroPanel from './HeroPanel';
 import CalendarGrid from './CalendarGrid';
 import NotesPanel from './NotesPanel';

@@ -8,7 +8,7 @@ interface YearProgressProps {
   month: number; // 0-indexed
 }
 
-export default function YearProgress({ year, month }: YearProgressProps) {
+export default function YearProgress({ year }: YearProgressProps) {
   const [hovered, setHovered] = useState(false);
   const now = new Date();
 

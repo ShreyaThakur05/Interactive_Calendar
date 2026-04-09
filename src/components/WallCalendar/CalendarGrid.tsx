@@ -1,4 +1,4 @@
-import { PointerEvent } from 'react';
+import type { PointerEvent } from 'react';
 import DayCell from './DayCell';
 import { WEEKDAYS, HOLIDAYS } from './constants';
 import { toISO, isBetween, isRangeStart, isRangeEnd } from './utils';
